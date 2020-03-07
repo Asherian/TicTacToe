@@ -125,7 +125,7 @@ function saveSettings() {
     var p1Selected = document.getElementById("player1").options;
     var p2Index = document.getElementById("player2").selctedIndex;
     var p2Selected = document.getElementById("player2").options;
-    if (p1Selected[p1Index].text == p2Selected[p2Index].text) {
+    if (p1Selected[p1Index].txt == p2Selected[p2Index].txt) {
         alert("Error - Player 1 and Player 2 cannot both be assigned as: "+p1Selected[p1Index].text)
     }
     else {
@@ -533,7 +533,7 @@ function square1Animate() {
 }
 function square2Animate() {
     var activePlayer = document.getElementByID("showPlayer").innerHTML;
-    if (activatePlayer !="Game Stopped") {
+    if (activatePlayer != "Game Stopped") { //if game is not started prevents avatar placement.
         var square = "1";
         var verdict = recordMoves(square);
         if (verdict ==undefined) {
