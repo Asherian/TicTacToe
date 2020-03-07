@@ -10,7 +10,7 @@ function watch() {
 function rollForTurn() {
     var xArray = [];
     var ranNum = "";
-    var minium = 1;
+    var minimum = 1;
     var maximum = 11;
     var first = "";
     var txt1 = "";
@@ -34,7 +34,7 @@ function rollForTurn() {
         setTimeout(function() {writeMsg(txt1);}, 1000); //set time delay
     }
 //determine  and concatenate string showing player won.boxLeft
-    if (pOne > pTWo) {
+    if (pOne > pTwo) {
         first = "Player 1"
         setTimeout(function() {txt1 = txt1 +"Player 1 wins, please choose a square.";}, 2000);
     } else if (pOne < pTwo) {
@@ -57,20 +57,20 @@ function startGame() {
     //assign state of the control buttons.
     var btn = document.getElementById("btnStart");
     btnDisabled(btn); //disable start button since game is now afoots.
-    var btn= docuemnt.getElementById("btnStop");
+    var btn= document.getElementById("btnStop");
     stopEnabled(btn); //enables the stop button since now in session.
 }
 
 //function styles game buttons while disabled - 
 function btnDisabled(btn) {
-    btn.style.color="fff";
+    btn.style.color="#fff";
     btn.style.border="2px solid rgb(153,153,102)";
     btn.style.backgroundColor= "rgb(214,214,194)";
     btn.disabled = true;
 }
 //function styles game buttons while disabled 2
 function stopEnabled(btn) {
-    btn.style.color="#fff";
+    btn.style.color="#ffffff";
     btn.style.border="2px solid rgb(204,0,0)";
     btn.style.backgroundColor="rgb(255,51,51)";
     btn.disabled= false;
@@ -84,7 +84,7 @@ function startEnabled(btn) {
 function stopGame() {
     hideGameMsg();
     var btn= document.getElementById("btnStart");
-    startEnabeld(btn); //enable the start button.
+    startEnabled(btn); //enable the start button.
     var btn= document.getElementById("btnStop");
     btnDisabled(btn); //disable the stop button.
     var showPlayer = document.getElementById("showPlayer")
@@ -106,11 +106,19 @@ document.getElementById("boardState").innerHTML = "";
 function showGameMsg() {
     document.getElementById("gameMsgBox").style.disaply = "block";
 }
-
-function hideGameMsg() {
-    clearMsg() //clear text from message console
+//write text function
+function writeMsg(txt) {
+    showGameMsg();
     document.getElementById("gameMsg").innerHTML = txt;
 }
+function hideGameMsg() {
+    clearMsg() //clear text from message console
+    document.getElementById("gameMsgBox").style.display = "none";//hide the div
+}
+function clearMsg() {
+
+        document.getElementById("gameMsg").innerHtml = "";
+    }
 //function is for player config panel and checks proposed avatar assigns
 function saveSettings() {
     var p1Index = document.getElementById("player1").selectedIndex;
