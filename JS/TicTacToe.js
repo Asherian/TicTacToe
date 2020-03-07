@@ -136,7 +136,7 @@ function saveSettings() {
 //currently assigned avatar for each player
 function getAvatars() {
     var p1Avatar = document.getElementById("p1Display").innerHTML;
-    var p2Avatar = docuemnt.getElementById("p2Display").innerHTML;
+    var p2Avatar = document.getElementById("p2Display").innerHTML;
     var avatarArray = [p1Avatar,p2Avatar];
     return avatarArray;
 }
@@ -532,7 +532,7 @@ function square1Animate() {
     }
 }
 function square2Animate() {
-    var activePlayer = document.getElementsByID("showPlayer").innerHTML;
+    var activePlayer = document.getElementByID("showPlayer").innerHTML;
     if (activatePlayer !="Game Stopped") {
         var square = "1";
         var verdict = recordMoves(square);
