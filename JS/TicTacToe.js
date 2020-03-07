@@ -14,13 +14,13 @@ function rollForTurn() {
     var maximum = 11;
     var first = "";
     var txt1 = "";
-    for (var i=0; i < 1; i++) {
+    for (var i = 0 ; i < 2; i++) {
         //random whole number between 1-10.
         ranNum = Math.floor(Math.random()*(maximum-minimum)+minimum);
         xArray.push(ranNum);
     }
     diceRoll(); //play dice sound during the roll
-    for (i=0;i<xArray.length;i++) {
+    for ( i = 0 ; i<xArray.length;i++) {
         var result= i+ 1;
         var pOne = xArray[0];
         var pTwo = xArray[1];
@@ -37,9 +37,11 @@ function rollForTurn() {
     if (pOne > pTwo) {
         first = "Player 1"
         setTimeout(function() {txt1 = txt1 +"Player 1 wins, please choose a square.";}, 2000);
+        setTimeout(function() {writeMsg(txt1);}, 2000);
     } else if (pOne < pTwo) {
         first = "Player 2";
         setTimeout(function() {txt1 = txt1+"Player 2 wins, please choose a square.";}, 2000);
+        setTimeout(function(){writeMsg(txt1);},2000);
     }
     // pass which player won the roll
     return first;
@@ -120,13 +122,13 @@ function clearMsg() {
         document.getElementById("gameMsg").innerHtml = "";
     }
 //function is for player config panel and checks proposed avatar assigns
-function saveSettings() {
+function saveSet() {
     var p1Index = document.getElementById("player1").selectedIndex;
     var p1Selected = document.getElementById("player1").options;
     var p2Index = document.getElementById("player2").selctedIndex;
     var p2Selected = document.getElementById("player2").options;
-    if (p1Selected[p1Index].txt == p2Selected[p2Index].txt) {
-        alert("Error - Player 1 and Player 2 cannot both be assigned as: "+p1Selected[p1Index].text)
+    if (p1Selected[p1Index].text == p2Selected[p2Index].text) {
+        alert("Error - Player 1 and Player 2 cannot both be assigned as: "+p1Selected[p1Index].text);
     }
     else {
         document.getElementById("p1Display").innerHTML=p1Selected[p1Index].text;
@@ -156,7 +158,7 @@ function determineAvatar() {
 }
 //change active player over to other player
 function avatarPlaced() {
-    var parseText = document.getElementsByID("gameMsg").innerHTML;
+    var parseText = document.getElementsById("gameMsg").innerHTML;
     var showPlayer = document.getElementById("showPlayer"); //select the current element to memory check if there is a winner, if there is then don't continue the game
     if (parseText == "That's three in a row, Player 1 wins!" || parseText == "That's three in a row, Player 2 wins!") {
         showPlayer.innerHTML = "Game Stopped";
@@ -510,7 +512,7 @@ function checkWinCon8(info,squareArray) {
 }
 //functions for clicks on corresponding square elements
 function square1Animate() {
-    var activatePlayer = document.getElementById("showPlayer").innerHTML;
+    var activePlayer = document.getElementById("showPlayer").innerHTML;
     if (activePlayer != "Game Stopped") { //if game has not yet started prevents avatar placement
         var square = "0";//identify square selected
         var verdict = recordMoves(square);
@@ -532,8 +534,8 @@ function square1Animate() {
     }
 }
 function square2Animate() {
-    var activePlayer = document.getElementByID("showPlayer").innerHTML;
-    if (activatePlayer != "Game Stopped") { //if game is not started prevents avatar placement.
+    var activePlayer = document.getElementById("showPlayer").innerHTML;
+    if (activePlayer != "Game Stopped") { //if game is not started prevents avatar placement.
         var square = "1";
         var verdict = recordMoves(square);
         if (verdict ==undefined) {
@@ -553,8 +555,8 @@ function square2Animate() {
     }
 }
 function square3Animate() {
-    var activatePlayer = document.getElementById("showPlayer").innerHTML;
-    if (activatePlayer != "Game Stopped") {
+    var activePlayer = document.getElementById("showPlayer").innerHTML;
+    if (activePlayer != "Game Stopped") {
         var square = "2";
         var verdict = recordMoves(square);
         if (verdict ==undefined) {
@@ -574,8 +576,8 @@ function square3Animate() {
     }
 }
 function square4Animate() {
-    var activatePlayer = document.getElementById("showPlayer").innerHTML;
-    if (activatePlayer != "Game Stopped") {
+    var activePlayer = document.getElementById("showPlayer").innerHTML;
+    if (activePlayer != "Game Stopped") {
         var square = "3";
         var verdict = recordMoves(square);
         if (verdict ==undefined) {
@@ -595,8 +597,8 @@ function square4Animate() {
     }
 }
 function square5Animate() {
-    var activatePlayer = document.getElementById("showPlayer").innerHTML;
-    if (activatePlayer != "Game Stopped") {
+    var activePlayer = document.getElementById("showPlayer").innerHTML;
+    if (activePlayer != "Game Stopped") {
         var square = "4";
         var verdict = recordMoves(square);
         if (verdict ==undefined) {
@@ -616,8 +618,8 @@ function square5Animate() {
     }
 }
 function square6Animate() {
-    var activatePlayer = document.getElementById("showPlayer").innerHTML;
-    if (activatePlayer != "Game Stopped") {
+    var activePlayer = document.getElementById("showPlayer").innerHTML;
+    if (activePlayer != "Game Stopped") {
         var square = "5";
         var verdict = recordMoves(square);
         if (verdict ==undefined) {
@@ -637,8 +639,8 @@ function square6Animate() {
     }
 }
 function square7Animate() {
-    var activatePlayer = document.getElementById("showPlayer").innerHTML;
-    if (activatePlayer != "Game Stopped") {
+    var activePlayer = document.getElementById("showPlayer").innerHTML;
+    if (activePlayer != "Game Stopped") {
         var square = "6";
         var verdict = recordMoves(square);
         if (verdict ==undefined) {
@@ -658,8 +660,8 @@ function square7Animate() {
     }
 }
 function square8Animate() {
-    var activatePlayer = document.getElementById("showPlayer").innerHTML;
-    if (activatePlayer != "Game Stopped") {
+    var activePlayer = document.getElementById("showPlayer").innerHTML;
+    if (activePlayer != "Game Stopped") {
         var square = "7";
         var verdict = recordMoves(square);
         if (verdict ==undefined) {
@@ -679,8 +681,8 @@ function square8Animate() {
     }
 }
 function square9Animate() {
-    var activatePlayer = document.getElementById("showPlayer").innerHTML;
-    if (activatePlayer != "Game Stopped") {
+    var activePlayer = document.getElementById("showPlayer").innerHTML;
+    if (activePlayer != "Game Stopped") {
         var square = "8";
         var verdict = recordMoves(square);
         if (verdict ==undefined) {
@@ -706,4 +708,26 @@ function animateO(selected) {
 //function will perform animation for X Avatar
 function animateX(selecteD) {
     selected.style.transform = (selected.style.transform == "translateY(-100%)" ||null) ? "translateY(0%)":"translateY(-100%)";
+}
+function checkForWinCon() {
+    var squareArray = []; //this is why I was getting the undefined error - didn't include this step.
+    var target = document.getElementById("boardState");
+    var info = target.innerHTML; //raw array with squares
+    info = info.split(","); //remove leading comma
+    info.sort();//sort the square array into order even though game play is out of sequence
+    for (var i in info) {
+        squareArray.push(info[i].charAt(0)); //new array with only squares not avatars
+    }
+    //call the following arrays
+    checkWinCon1(info,squareArray);
+    checkWinCon2(info,squareArray);
+    checkWinCon3(info,squareArray);
+    checkWinCon4(info,squareArray);
+    checkWinCon5(info,squareArray);
+    checkWinCon6(info,squareArray);
+    checkWinCon7(info,squareArray);
+    checkWinCon8(info,squareArray);
+    check4Tie();
+
+
 }
