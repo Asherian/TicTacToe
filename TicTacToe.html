@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" content="text/html">
+    <META content="width=device-width, initial-scale=1.0" name="viewport">
     <title>Tic Tac Toe Game</title>
     <!--Javascript Assignment -part pg 244-->
     <link rel="stylesheet" href="./CSS/game.css">
+    <style></style>
 </head>
 <body id="body">
     <audio id="placeAvatar">
@@ -41,23 +43,24 @@
         </div>
     </div>
     <table>
-        <tr><td>
+        <tr>
+            <td>
             <div class="photo-container">
-                <div id="square0" class="square" onclick="square1Animate()">
+                <div id="square0" class="square" onclick="square1Animate()" ondblclick="">
                 <div class="O"></div>
                 <div class="X"></div>
             </div>
         </td>
         <td>
             <div class="photo-container">
-                <div id="square1" class="square" onclick="square2Animate()">
+                <div id="square1" class="square" onclick="square2Animate()" ondblclick="">
                 <div class="O"></div>
                 <div class="X"></div>
             </div>
         </td>
         <td>
             <div class="photo-container">
-                <div id="square2" class="square" onclick="square3Animate()">
+                <div id="square2" class="square" onclick="square3Animate()" ondblclick="">
                 <div class="O"></div>
                 <div class="X"></div>
             </div>
@@ -65,21 +68,21 @@
     </tr>
     <tr><td>
         <div class="photo-container">
-            <div id="square3" class="square" onclick="square4Animate()">
+            <div id="square3" class="square" onclick="square4Animate()" ondblclick="">
             <div class="O"></div>
             <div class="X"></div>
         </div>
     </td>
     <td>
         <div class="photo-container">
-            <div id="square4" class="square" onclick="square5Animate()">
+            <div id="square4" class="square" onclick="square5Animate()" ondblclick="">
             <div class="O"></div>
             <div class="X"></div>
         </div>
     </td>
     <td>
         <div class="photo-container">
-            <div id="square5" class="square" onclick="square6Animate()">
+            <div id="square5" class="square" onclick="square6Animate()" ondblclick="">
             <div class="O"></div>
             <div class="X"></div>
         </div>
@@ -87,21 +90,21 @@
 </tr>
 <tr><td>
     <div class="photo-container">
-        <div id="square6" class="square" onclick="square7Animate()">
+        <div id="square6" class="square" onclick="square7Animate()" ondblclick="">
         <div class="O"></div>
         <div class="X"></div>
     </div>
 </td>
 <td>
     <div class="photo-container">
-        <div id="square7" class="square" onclick="square8Animate()">
+        <div id="square7" class="square" onclick="square8Animate()" ondblclick="">
         <div class="O"></div>
         <div class="X"></div>
     </div>
 </td>
 <td>
     <div class="photo-container">
-        <div id="square8" class="square" onclick="square9Animate()">
+        <div id="square8" class="square" onclick="square9Animate()" ondblclick="">
         <div class="O"></div>
         <div class="X"></div>
     </div>
@@ -109,13 +112,14 @@
 </tr>
 </table>
     <div class="console_Right" style="float:right;">
-        <div class="displayBox BoxRight">
+        <div class="displayBox boxRight">
             <Strong>Configuration:</Strong><br><br>
             <label>Player 1:</label><select id="player1"><option value="X">X</option><option value="O">O</option></select><br>
-            <label>Player 2:</label><select id="player2"><option value="O">O</option><option value="O">O</option></select><br>
-            <button onclick="saveSet()">Save Config</button>
+            <label>Player 2:</label><select id="player2"><option value="O">X</option><option value="O">O</option></select><br>
+            <button onclick="saveSettings()">Save Config</button>
         </div>
-        <div id="controls"><button id="btnStop" onclick="stopGame()">Stop Game</button>
+        <div id="controls">
+            <button id="btnStop" onclick="stopGame()">Stop Game</button>
         </div>
     </div>
 </div>
@@ -123,10 +127,10 @@
 <script>
     var arrayO= document.getElementsByClassName("O");
     var arrayX= document.getElementsByClassName("X");
-    for (var i=0; i<arrayO.length ; i++) {
+    for (var i=0; i<arrayO.length; i++) {
         arrayO[i].style.transform = "translateY(-100%)";
     }//Moves the Xs and Os up and down - makes sure remains hidden is why directly in HTML code.
-    for (var i=0; i<arrayX.length ; i++) {
+    for (var i=0; i<arrayX.length; i++) {
         arrayX[i].style.transform= "translateY(100%)";
     }
 </script>

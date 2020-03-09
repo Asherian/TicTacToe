@@ -1,13 +1,13 @@
 /*Tic Tac Toe Assignment - CSS code pg 246 portion*/
 body {
-    background-color: #EEE;
+    background-color: #FFfffF;
 }
 
 #shell{
     width: 950px;
     margin: 0 auto;
 }
-
+/*Opening message formatting*/
 #gameMsgBox {
     cursor: pointer;
     display: none;
@@ -29,6 +29,7 @@ body {
     text-align: center;
     color: darkblue;
     font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 45px;
 }
 /*Game board formatting*/
@@ -81,7 +82,6 @@ table tr:nth-child(3) td:nth-child(1) {
 .O {
     transition: transform .3s;
     opacity: 1;
-    position: absolute;
     background-image: url("../Images/avatarO.png");
     width: 200px;
     height: 200px;
@@ -98,12 +98,12 @@ table tr:nth-child(3) td:nth-child(1) {
 .console_Left {
     width: 160px;
     height: 600px;
-    margin: 0px auto;
+    margin: 0px 0px 0px 10px;
     float: left;
 }
 .console_Right {
     width: 140px;
-    height: 600;
+    height: 600px;
     margin: 0px auto;
     float: left;
 }
@@ -143,7 +143,8 @@ table tr:nth-child(3) td:nth-child(1) {
 .boxRight>button:hover {
     background-color: rgba(237,234,234,.95);
     border: 1px solid rgba(0,0,0,.85);
-    box-shadow: 3px 3px 15 px -4px rgba(0,0,0,0.65);
+    box-shadow: 3px 3px 15px -4px rgba(0,0,0,0.65);
+    border-radius: 10px;
 }
 #controls {
     width: 200px;
@@ -180,8 +181,9 @@ table tr:nth-child(3) td:nth-child(1) {
     width: 124px;
     height: 82px;
     text-align: center;
-    margin: 350px 0px 0px 20px;
+    margin: 358px 0px 0px 20px;
     box-shadow: 5px 5px 25px -4px rgba(0,0,0,0.65);
+    border-radius: 10px;
 }
 #boardState {
     display: none;
@@ -200,7 +202,7 @@ table tr:nth-child(3) td:nth-child(1) {
     background-color: rgb(57,230,0);
     margin: 20px 0px 0px 25px;
     padding: 12px 14px 12px 14px;
-    box-shadow: inset 3px 3px 15px -2px rgba(255,255,0,0.95), 3px 3px 15px -4px rgba(0,0,0,0.65);
+    box-shadow: inset 3px 3px 15px -2px rgba(255,255,255,0.95), 3px 3px 15px -4px rgba(0,0,0,0.85);
     border-radius: 10px;
 }
 #btnStart:hover {
@@ -221,14 +223,14 @@ color: #fff;
 text-shadow: 2px 2px 2px rgba(0,0,0,.2);
 border: 2px solid rgb(204,0, 0);
 background-color: rgb(255,51,51);
-margin: 20px 0px 0px 25px;
+margin: 20px 0px 0px 10px;
 padding: 12px 14px 12px 14px;
-box-shadow: inset 3px 3px 15px -2px rgba(255,255,0,0.95), 3px 3px 15px -4px rgba(0,0,0,0.65);
+box-shadow: inset 3px 3px 15px -2px rgba(255,255,255,0.95), 3px 3px 15px -4px rgba(0,0,0,0.85);
 border-radius: 10px;
 }
 #btnStop:hover {
     border: 2px solid rgb(19,77,0);
-    background-color: rgb(0,204,0);
+    background-color: rgb(255,0,0);
     box-shadow: inset 3px 3px 15px -2px rgba(0,0,0,0.65);
     transition-property: background box-shadow;
     transition: 0.2s;

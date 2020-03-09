@@ -20,8 +20,8 @@ function rollForTurn() {
         xArray.push(ranNum);
     }
     diceRoll(); //play dice sound during the roll
-    for ( i = 0 ; i<xArray.length;i++) {
-        var result= i+ 1;
+    for (i=0;i<xArray.length;i++) {
+        var result= i + 1;
         var pOne = xArray[0];
         var pTwo = xArray[1];
         if (pOne == pTwo) { //rigging roll on tie to avoid bug in code.boxLeft
@@ -35,13 +35,13 @@ function rollForTurn() {
     }
 //determine  and concatenate string showing player won.boxLeft
     if (pOne > pTwo) {
-        first = "Player 1"
+        first = "Player 1";
         setTimeout(function() {txt1 = txt1 +"Player 1 wins, please choose a square.";}, 2000);
         setTimeout(function() {writeMsg(txt1);}, 2000);
     } else if (pOne < pTwo) {
         first = "Player 2";
         setTimeout(function() {txt1 = txt1+"Player 2 wins, please choose a square.";}, 2000);
-        setTimeout(function(){writeMsg(txt1);},2000);
+        setTimeout(function() {writeMsg(txt1);},2000);
     }
     // pass which player won the roll
     return first;
@@ -72,20 +72,20 @@ function btnDisabled(btn) {
 }
 //function styles game buttons while disabled 2
 function stopEnabled(btn) {
-    btn.style.color="#ffffff";
+    btn.style.color="#fff";
     btn.style.border="2px solid rgb(204,0,0)";
     btn.style.backgroundColor="rgb(255,51,51)";
     btn.disabled= false;
 }
 function startEnabled(btn) {
     btn.style.color="#FFF";
-    btn.style.border = "2px solid rgb(204,0,0)";
-    btn.style.backgroundColor= "rgb(255,51,51)";
+    btn.style.border = "2px solid rgb(0,153,0)";
+    btn.style.backgroundColor= "rgb(57,230,0)";
     btn.disabled = false;
 }// when user stops the game - will reset game.
 function stopGame() {
     hideGameMsg();
-    var btn= document.getElementById("btnStart");
+    var btn = document.getElementById("btnStart");
     startEnabled(btn); //enable the start button.
     var btn= document.getElementById("btnStop");
     btnDisabled(btn); //disable the stop button.
@@ -122,7 +122,7 @@ function clearMsg() {
         document.getElementById("gameMsg").innerHtml = "";
     }
 //function is for player config panel and checks proposed avatar assigns
-function saveSet() {
+function saveSettings() {
     var p1Index = document.getElementById("player1").selectedIndex;
     var p1Selected = document.getElementById("player1").options;
     var p2Index = document.getElementById("player2").selctedIndex;
