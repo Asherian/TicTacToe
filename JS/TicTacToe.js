@@ -160,9 +160,9 @@ function determineAvatar() {
     var active = document.getElementById("showPlayer").innerHTML;//get active player
     p1Avatar = avatarArray[0];
     p2Avatar = avatarArray[1];
-    if (active =="player 1") {//check which player is active and their avatar
+    if (active =="Player 1") {//check which player is active and their avatar
         var paintAvatar = p1Avatar;
-    } else if (active == "player 2") {
+    } else if (active == "Player 2") {
         var paintAvatar = p2Avatar;
     }
     return paintAvatar;//return back correct avatar
@@ -559,7 +559,7 @@ function square2Animate() {
         var verdict = recordMoves(square);
         if (verdict == undefined) {//if verdict is empty the square is unoccupied
             var paintAvatar = determineAvatar();
-            var selected = document.getElementsByClassName(paintAvatar)[0];//paint avatar
+            var selected = document.getElementsByClassName(paintAvatar)[1];//paint avatar
             if (paintAvatar == "O") {
                 animateO(selected);//call function to animate O
             } else if (paintAvatar == "X") {
@@ -581,7 +581,7 @@ function square3Animate() {
         var verdict = recordMoves(square);
         if (verdict == undefined) {//if verdict is empty the square is unoccupied
             var paintAvatar = determineAvatar();
-            var selected = document.getElementsByClassName(paintAvatar)[0];//paint avatar
+            var selected = document.getElementsByClassName(paintAvatar)[2];//paint avatar
             if (paintAvatar == "O") {
                 animateO(selected);//call function to animate O
             } else if (paintAvatar == "X") {
@@ -603,7 +603,7 @@ function square4Animate() {
         var verdict = recordMoves(square);
         if (verdict == undefined) {//if verdict is empty the square is unoccupied
             var paintAvatar = determineAvatar();
-            var selected = document.getElementsByClassName(paintAvatar)[0];//paint avatar
+            var selected = document.getElementsByClassName(paintAvatar)[3];//paint avatar
             if (paintAvatar == "O") {
                 animateO(selected);//call function to animate O
             } else if (paintAvatar == "X") {
@@ -625,7 +625,7 @@ function square5Animate() {
         var verdict = recordMoves(square);
         if (verdict == undefined) {//if verdict is empty the square is unoccupied
             var paintAvatar = determineAvatar();
-            var selected = document.getElementsByClassName(paintAvatar)[0];//paint avatar
+            var selected = document.getElementsByClassName(paintAvatar)[4];//paint avatar
             if (paintAvatar == "O") {
                 animateO(selected);//call function to animate O
             } else if (paintAvatar == "X") {
@@ -647,7 +647,7 @@ function square6Animate() {
         var verdict = recordMoves(square);
         if (verdict == undefined) {//if verdict is empty the square is unoccupied
             var paintAvatar = determineAvatar();
-            var selected = document.getElementsByClassName(paintAvatar)[0];//paint avatar
+            var selected = document.getElementsByClassName(paintAvatar)[5];//paint avatar
             if (paintAvatar == "O") {
                 animateO(selected);//call function to animate O
             } else if (paintAvatar == "X") {
@@ -669,7 +669,7 @@ function square7Animate() {
         var verdict = recordMoves(square);
         if (verdict == undefined) {//if verdict is empty the square is unoccupied
             var paintAvatar = determineAvatar();
-            var selected = document.getElementsByClassName(paintAvatar)[0];//paint avatar
+            var selected = document.getElementsByClassName(paintAvatar)[6];//paint avatar
             if (paintAvatar == "O") {
                 animateO(selected);//call function to animate O
             } else if (paintAvatar == "X") {
@@ -691,7 +691,7 @@ function square8Animate() {
         var verdict = recordMoves(square);
         if (verdict == undefined) {//if verdict is empty the square is unoccupied
             var paintAvatar = determineAvatar();
-            var selected = document.getElementsByClassName(paintAvatar)[0];//paint avatar
+            var selected = document.getElementsByClassName(paintAvatar)[7];//paint avatar
             if (paintAvatar == "O") {
                 animateO(selected);//call function to animate O
             } else if (paintAvatar == "X") {
@@ -713,7 +713,7 @@ function square9Animate() {
         var verdict = recordMoves(square);
         if (verdict == undefined) {//if verdict is empty the square is unoccupied
             var paintAvatar = determineAvatar();
-            var selected = document.getElementsByClassName(paintAvatar)[0];//paint avatar
+            var selected = document.getElementsByClassName(paintAvatar)[8];//paint avatar
             if (paintAvatar == "O") {
                 animateO(selected);//call function to animate O
             } else if (paintAvatar == "X") {
@@ -730,9 +730,9 @@ function square9Animate() {
 }
 //function to perform animation of O avatar
 function animateO(selected) {
-    selected.style.transform = (selected.style.transform == "translateY(0%)" || null) ? "translateY(0%)" : "translateY(0%)";
+	selected.style.transform = (selected.style.transform == "translateY(0%)" || null) ? "translateY(0%)" : "translateY(0%)";
 }
 //function to perform animation of X avatar
 function animateX(selected) {
-    selected.style.transform = (selected.style.transform == "translateY(-100%)" || null) ? "translateY(0%)" : "translateY(-100%)";
+	selected.style.transform = (selected.style.transform == "translateY(-100%)" || null) ? "translateY(0%)" : "translateY(-100%)";
 }
